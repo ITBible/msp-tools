@@ -6,6 +6,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import Input from '../../Components/Fields/Input.vue';
 
 defineProps({
     status: String,
@@ -25,7 +26,7 @@ const submit = () => {
 
     <AuthenticationCard>
         <template #logo>
-            <AuthenticationCardLogo />
+            <img class="w-16 h-16" :src="$page.props.config.app_logo" />
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -39,15 +40,16 @@ const submit = () => {
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
+                <Input id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autofocus autocomplete="username" />
+<!--                <TextInput-->
+<!--                    id="email"-->
+<!--                    v-model="form.email"-->
+<!--                    type="email"-->
+<!--                    class="mt-1 block w-full"-->
+<!--                    required-->
+<!--                    autofocus-->
+<!--                    autocomplete="username"-->
+<!--                />-->
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 

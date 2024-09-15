@@ -36,6 +36,10 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'config' => [
+                'app_logo' => config('app.logo'),
+                'paste_ticket_required' => config('paste.require_ticket')
+            ]
         ];
     }
 }

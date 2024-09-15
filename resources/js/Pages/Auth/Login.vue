@@ -7,6 +7,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import Input from '../../Components/Fields/Input.vue';
 
 defineProps({
     canResetPassword: Boolean,
@@ -34,7 +35,7 @@ const submit = () => {
 
     <AuthenticationCard>
         <template #logo>
-            <AuthenticationCardLogo />
+            <img class="w-16 h-16" :src="$page.props.config.app_logo" />
         </template>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -44,28 +45,30 @@ const submit = () => {
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
+                <Input id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autofocus autocomplete="username" />
+<!--                <TextInput-->
+<!--                    id="email"-->
+<!--                    v-model="form.email"-->
+<!--                    type="email"-->
+<!--                    class="mt-1 block w-full"-->
+<!--                    required-->
+<!--                    autofocus-->
+<!--                    autocomplete="username"-->
+<!--                />-->
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
                 <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="current-password"
-                />
+                <Input id="password" v-model="form.password" type="password" class="mt-1 block w-full" required autocomplete="current-password" />
+<!--                <TextInput-->
+<!--                    id="password"-->
+<!--                    v-model="form.password"-->
+<!--                    type="password"-->
+<!--                    class="mt-1 block w-full"-->
+<!--                    required-->
+<!--                    autocomplete="current-password"-->
+<!--                />-->
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 

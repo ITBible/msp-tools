@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'logo' => env('APP_LOGO_URL', 'https://itbible-assets.nyc3.cdn.digitaloceanspaces.com/icons/mark.png'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
