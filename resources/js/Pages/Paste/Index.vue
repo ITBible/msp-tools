@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="space-x-4 w-full sm:w-1/5 flex flex-1 justify-end mr-2">
-                        <Secondary class="sm:h-2/3">Clear</Secondary>
+                        <Secondary @click="clear" class="sm:h-2/3">Clear</Secondary>
                         <Primary type="submit" class="sm:h-2/3">Send</Primary>
                     </div>
                 </div>
